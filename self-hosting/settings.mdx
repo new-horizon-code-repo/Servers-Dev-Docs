@@ -44,6 +44,8 @@ Accounts are on when the server has a database. People sign up in the panel, wor
 
 Platform admins (see `ATOLL_AUTH_ADMIN_EMAILS`) get an Admin page in the panel: users and orgs (search, suspend, delete, make admin), system status (build queue, replicas, runners, storage), revenue, and "view as user". It needs accounts, so a server without a database has none.
 
+![The Admin page's System tab for platform admins: the build queue, replicas, runners and storage of the whole server](/images/self-hosting/admin.webp)
+
 - A suspended user can't sign in; their sessions end and their tokens stop working until they are unsuspended.
 - A suspended org has its apps scaled to zero, like billing does past a limit, until it is unsuspended.
 - "View as user" turns the admin's own session into a read-only view of the panel as that user: the server refuses every change in it, and the panel shows a banner with "Stop viewing". It only applies to the panel's requests; a link opened in the browser still acts as the admin.

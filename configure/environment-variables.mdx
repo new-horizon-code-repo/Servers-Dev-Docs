@@ -30,7 +30,9 @@ Values typed on the command line can end up in your shell history. For secrets, 
 
 ## Set, list and remove
 
-In the panel, use the project's **Env** tab. From the CLI:
+![A project's Environment tab: production and preview variables with their values, where they are used, and secrets masked](/images/configure/environment-variables.webp)
+
+In the panel, use the project's **Environment** tab. From the CLI:
 
 ```sh
 atoll env set API_URL=https://api.example.com --no-runtime
@@ -47,7 +49,7 @@ Reading plain values needs the Viewer role; secrets are never shown. Setting and
 
 ## When changes apply
 
-Changes apply on the next deployment. To apply them right away, use the **Redeploy production** button in the panel's **Env** tab. It redeploys the latest production deployment.
+Changes apply on the next deployment. To apply them right away, use the **Redeploy production** button in the panel's **Environment** tab. It redeploys the latest production deployment.
 
 ## Names and limits
 

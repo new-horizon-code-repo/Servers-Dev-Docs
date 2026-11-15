@@ -27,6 +27,8 @@ A [preview](/deploy/previews) stays in the preview environment unless you say ot
 atoll promote 3c9e41a0 --to production
 ```
 
+![Promoting a preview: the panel asks whether to put the preview live on the production hosts](/images/deploy/promote.webp)
+
 The other way round is not possible: a production deployment can't become a preview.
 
 Build env vars are baked into the outputs when they are built. A preview built with `preview` build values keeps them when promoted. If your web app reads an API URL at build time, rebuild instead (next section).
@@ -62,4 +64,4 @@ atoll promote b71f0c22
 
 ## Redeploy
 
-Promoting the latest deployment redeploys it. That restarts its Ktor servers with the current env vars, which is the quickest way to apply a runtime env var change. The **Redeploy production** button in the panel's **Env** tab does exactly that.
+Promoting the latest deployment redeploys it. That restarts its Ktor servers with the current env vars, which is the quickest way to apply a runtime env var change. The **Redeploy production** button in the panel's **Environment** tab does exactly that.

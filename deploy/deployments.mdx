@@ -42,6 +42,8 @@ The deployment's final status follows from its targets:
 
 A target that fails keeps its previous version live. A `PARTIAL` deployment does not take down what was already running.
 
+![One deployment in the panel: its status, environment, source and address, each app with its downloads, and the build logs](/images/deploy/deployment.webp)
+
 ## Newer deployments win
 
 Deployments of the same project can build at the same time, but they go live in order. If an older deployment finishes building after a newer one is already live, its Ktor servers are not rolled out. They show as `SKIPPED` with "Not rolled out because the newer deployment … is already live". You never end up running older code by accident.
@@ -80,6 +82,8 @@ b71f0c22  my-app   PARTIAL  production  1h ago   2 ready, 1 failed   https://my-
 ```
 
 `atoll list -p my-app -e preview` narrows the list; `-n` shows more (up to 200), and `--before <id>` pages back. The panel shows the same list per project, with who started each deployment and, for git deployments, the branch, commit and pull request.
+
+![A project's Deployments tab: production and preview deployments with their status, branch and commit, apps, author and age](/images/deploy/deployments.webp)
 
 ## Cancelling
 

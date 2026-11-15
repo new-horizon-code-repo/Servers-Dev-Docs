@@ -23,6 +23,11 @@
       "weight": 400
     }
   },
+  "styling": {
+    "codeblocks": {
+      "theme": "dark-plus"
+    }
+  },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [

@@ -14,11 +14,15 @@ Open the deployment in the project's **Deployments** tab and press **Share** (it
 
 Each link is a random address on the panel, `https://<panel>/#/d/<token>`. Copy it or show its QR code. A deployment can have up to 20 active links.
 
+![The Share dialog of a deployment: a download link with its QR code, and a form for a new link with a password and an expiry](/images/deploy/share-link.webp)
+
 Creating and revoking links needs the **Developer** role; anyone who can see the project can list them.
 
 ## The download page
 
 The page shows the app (the project name), its version (the commit, or the deployment id for uploads) and a big download button for the visitor's device: the APK on Android, the installer on Windows (`.msi`/`.exe`), macOS (`.dmg`/`.pkg`) and Linux (`.deb`, archive or jar). The other platforms are listed below. On a computer, a QR code opens the page on a phone.
+
+![A shared download page opened without an account: the release with a download button for each file](/images/deploy/download-page.webp)
 
 Android App Bundles (`.aab`) are listed for Google Play but never offered first, because phones can't install them.
 

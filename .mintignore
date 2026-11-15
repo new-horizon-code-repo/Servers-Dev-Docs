@@ -5,3 +5,6 @@
 # Draft content
 drafts/
 *.draft.mdx
+
+# Tooling that makes the docs images, not part of the site
+scripts/
