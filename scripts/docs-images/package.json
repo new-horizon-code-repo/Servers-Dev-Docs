@@ -1,0 +1,13 @@
+{
+  "name": "docs-images",
+  "private": true,
+  "type": "module",
+  "description": "Captures the panel's demo mode for the docs and sets each shot on a Backdrop background.",
+  "scripts": {
+    "capture": "node capture.mjs"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^25.16.0",
+    "sharp": "^0.35.5"
+  }
+}

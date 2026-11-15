@@ -100,12 +100,15 @@ code, kbd, samp, pre { font-family: "Geist Mono", ui-monospace, Consolas, monosp
   box-shadow: inset 0 -2px 0 var(--atoll-active);
 }
 
-@media (min-width: 1200px) {
+/* Centred only where it clears the logo and the tabs; narrower, it leads the links on the right. */
+@media (min-width: 1440px) {
   #navbar .topbar-right-container > div:has(> #search-bar-entry) {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
   }
+}
+@media (min-width: 1200px) {
   #search-bar-entry {
     min-width: 340px;
     height: 34px;
@@ -126,6 +129,9 @@ code, kbd, samp, pre { font-family: "Geist Mono", ui-monospace, Consolas, monosp
     font-family: "Geist Mono", ui-monospace, monospace;
     font-weight: 400;
   }
+}
+@media (min-width: 1200px) and (max-width: 1439.98px) {
+  #search-bar-entry { min-width: 220px; }
 }
 
 #navbar .topbar-right-container a:not(#topbar-cta-button a) {
@@ -210,3 +216,44 @@ code, kbd, samp, pre { font-family: "Geist Mono", ui-monospace, Consolas, monosp
   color: var(--atoll-ink-soft);
   font-size: 15px;
 }
+
+/* Panel images (images/, made by scripts/docs-images): rounded like the code blocks. */
+.mdx-content img[src*="/images/"] { border-radius: 16px; }
+
+/*
+ * Code blocks: black, in light and dark mode alike, with the boards' syntax colours (syrupv3,
+ * components/boards/lantern/lantern.module.css): keywords pink, identifiers blue, calls and types violet, strings green,
+ * numbers and punctuation plain. Mintlify only takes built-in Shiki themes, so docs.json pins dark-plus and its token
+ * colours are mapped to these. Shell arguments are strings to Shiki; they stay plain so commands read cleanly.
+ */
+html .code-block,
+html .code-group { border-color: rgb(255 255 255 / 0.08) !important; background-color: #000 !important; }
+html .code-block [data-component-part="code-block-root"],
+html .code-group [data-component-part="code-block-root"] { background-color: #000 !important; }
+html pre.shiki { color: #f2f2f2 !important; }
+html pre.shiki span[style*="color:#569CD6" i],
+html pre.shiki span[style*="color:#C586C0" i] { color: #ff5d8f !important; }
+html pre.shiki span[style*="color:#9CDCFE" i],
+html pre.shiki span[style*="color:#4FC1FF" i] { color: #5bb0ff !important; }
+html pre.shiki span[style*="color:#DCDCAA" i],
+html pre.shiki span[style*="color:#4EC9B0" i] { color: #b388ff !important; }
+html pre.shiki span[style*="color:#CE9178" i],
+html pre.shiki span[style*="color:#D16969" i] { color: #4ade80 !important; }
+html pre.shiki span[style*="color:#D4D4D4" i],
+html pre.shiki span[style*="color:#B5CEA8" i],
+html pre.shiki span[style*="color:#D7BA7D" i],
+html pre.shiki[language="shellscript"] span[style*="color:#CE9178" i] { color: #f2f2f2 !important; }
+html pre.shiki span[style*="color:#6A9955" i] { color: #a1a1a1 !important; }
+
+/* Diffs (// [!code ++] and // [!code --]) and line numbers, as on the boards: a 14% wash with a 2px bar, numbers grey. */
+html [data-component-part="code-block-root"]:not(.has-line-numbers) pre.shiki .line-diff.line-add,
+html [data-component-part="code-block-root"]:not(.has-line-numbers) pre.shiki .line-diff.line-add::after { background: rgb(48 164 108 / 0.14) !important; }
+html [data-component-part="code-block-root"]:not(.has-line-numbers) pre.shiki .line-diff.line-add::before { color: #30a46c !important; border-left: 2px solid #30a46c !important; background: rgb(48 164 108 / 0.14) !important; }
+html [data-component-part="code-block-root"]:not(.has-line-numbers) pre.shiki .line-diff.line-remove,
+html [data-component-part="code-block-root"]:not(.has-line-numbers) pre.shiki .line-diff.line-remove::after { background: rgb(229 72 77 / 0.14) !important; }
+html [data-component-part="code-block-root"]:not(.has-line-numbers) pre.shiki .line-diff.line-remove::before { color: #e5484d !important; border-left: 2px solid #e5484d !important; background: rgb(229 72 77 / 0.14) !important; }
+html [data-component-part="code-block-root"].has-line-numbers pre.shiki > code > .line::before { color: #707070 !important; opacity: 1 !important; }
+html [data-component-part="code-block-root"].has-line-numbers pre.shiki .line-diff.line-add::after { background: rgb(48 164 108 / 0.14) !important; border-left: 2px solid #30a46c !important; }
+html [data-component-part="code-block-root"].has-line-numbers pre.shiki .line-diff.line-remove::after { background: rgb(229 72 77 / 0.14) !important; border-left: 2px solid #e5484d !important; }
+html [data-component-part="code-block-root"].has-line-numbers pre.shiki > code > .line-diff.line-add::before { color: #30a46c !important; }
+html [data-component-part="code-block-root"].has-line-numbers pre.shiki > code > .line-diff.line-remove::before { color: #e5484d !important; }

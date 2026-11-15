@@ -65,6 +65,8 @@ The project's **CI** tab lists the runs with their status, branch, commit, messa
 its live log and the Gradle tasks that failed (from `> Task :x FAILED` lines). A run is `QUEUED`, `RUNNING`,
 `PASSED`, `FAILED` (a task failed), `CANCELLED` or `ERROR` (the platform couldn't run it, not a test failure).
 
+![A project's CI tab: Gradle runs for pushes and pull requests with their status, branch, duration and author](/images/deploy/ci.webp)
+
 ```sh
 atoll ci ls [--limit 50] [--branch main]
 atoll ci logs <run> [--follow]           # with --follow, exits 1 unless the run passed

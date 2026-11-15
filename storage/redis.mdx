@@ -4,6 +4,8 @@ description: "A managed Redis-compatible store (Valkey) for caches, sessions and
 ---
 A Redis store is one Valkey 9 server. Valkey speaks the Redis protocol, so Redis clients work with it. Create the store on the **Storage** page and connect it to your project as described in [Storage](/storage/overview). Your Ktor servers then get its connection details as env vars.
 
+![A Redis store's Overview tab: memory used, its details and the connection values](/images/storage/redis.webp)
+
 ## Sizes
 
 You pick the memory. The store also gets a disk twice that size for its data file, and 0.25 vCPU. Only the disk is billed.

@@ -48,7 +48,7 @@ atoll env import android.env --secret --no-runtime
 rm android.env
 ```
 
-On macOS, use `base64 -i upload.jks` instead of `base64 -w0 upload.jks`. You can also paste the values in the project's **Env** tab.
+On macOS, use `base64 -i upload.jks` instead of `base64 -w0 upload.jks`. You can also paste the values in the project's **Environment** tab.
 
 The platform checks the secrets before it builds. If the base64 is broken, the keystore does not open with the password, the alias is not in it, or the key password is wrong, the Android target fails with that reason.
 
